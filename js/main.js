@@ -59,7 +59,7 @@ const FORMS = {
         x = x.pow(tmp.dark.shadowEff.mass)
 
         if (CHALS.inChal(9) || FERMIONS.onActive("12")) x = expMult(x,0.9)
-        
+
         x = x.softcap(tmp.massSoftGain,tmp.massSoftPower,0)
         .softcap(tmp.massSoftGain2,tmp.massSoftPower2,0)
         .softcap(tmp.massSoftGain3,tmp.massSoftPower3,0)
@@ -203,7 +203,7 @@ const FORMS = {
                 player.tickspeed = player.tickspeed.add(1)
             }
         },
-        buyMax() { 
+        buyMax() {
             if (this.can()) {
                 if (!player.mainUpg.atom.includes(2)) player.rp.points = player.rp.points.sub(tmp.tickspeedCost).max(0)
                 player.tickspeed = tmp.tickspeedBulk
@@ -237,7 +237,7 @@ const FORMS = {
             if (hasPrestige(0,6)) ss = ss.pow(100)
             if (hasElement(102)) ss = ss.pow(100)
             step = step.softcap(ss,p,0)
-            
+
             let eff = step.pow(t.add(bonus).mul(hasElement(80)?25:1))
             if (hasElement(18)) eff = eff.pow(tmp.elements.effect[18])
             if (player.ranks.tetr.gte(3)) eff = eff.pow(1.05)
@@ -425,7 +425,7 @@ const FORMS = {
                     if (hasTree("bh2")) pow = pow.pow(1.15)
                 if (hasElement(129)) pow = pow.pow(elemEffect(18))
                 pow = pow//.softcap('e3e10',0.9,2)
-                
+
                 let eff = pow.pow(t.add(tmp.bh.condenser_bonus))
                 return {pow: pow, eff: eff}
             },
@@ -536,7 +536,7 @@ function format(ex, acc=4, max=12, type=player.options.notation) {
 
 function turnOffline() { player.offline.active = !player.offline.active }
 
-const ARV = ['mlt','mgv','giv','tev','pev','exv','zev','yov']
+const ARV = ['Multiverse','Megaverse','Gigaverse','Teraverse','Petaverse','Exaverse','Zettaverse','Yottaverse']
 
 function formatARV(ex,gain=false) {
     if (gain) ex = uni('ee9').pow(ex)
