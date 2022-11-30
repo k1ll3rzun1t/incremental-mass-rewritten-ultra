@@ -67,7 +67,7 @@ const UPGS = {
             start: E(1),
             inc: E(1.5),
             effect(x) {
-                let step = E(1)
+                let step = E(1.1)
                 if (player.ranks.rank.gte(3)) step = step.add(RANKS.effect.rank[3]())
                 step = step.mul(tmp.upgs.mass[2]?tmp.upgs.mass[2].eff.eff:1)
                 let ret = step.mul(x.add(tmp.upgs.mass[1].bonus))
@@ -116,7 +116,7 @@ const UPGS = {
         3: {
             unl() { return player.ranks.rank.gte(3) || player.mainUpg.atom.includes(1) },
             title: "Stronger",
-            start: E(1e-30),
+            start: E(1e-3),
             inc: E(9),
             effect(x) {
                 let xx = x.add(tmp.upgs.mass[3].bonus)
