@@ -116,7 +116,7 @@ const UPGS = {
         3: {
             unl() { return player.ranks.rank.gte(3) || player.mainUpg.atom.includes(1) },
             title: "Stronger",
-            start: E(10),
+            start: E(1000),
             inc: E(9),
             effect(x) {
                 let xx = x.add(tmp.upgs.mass[3].bonus)
@@ -164,7 +164,7 @@ const UPGS = {
             bonus() {
                 let x = E(0)
                 if (player.mainUpg.rp.includes(7)) x = x.add(tmp.upgs.main?tmp.upgs.main[1][7].effect:0)
-                x = x.mul(getEnRewardEff(4))
+                x = x.mul(getEnRewardEff(40))
                 return x
             },
         },
