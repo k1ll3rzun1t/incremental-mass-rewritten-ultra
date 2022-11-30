@@ -117,10 +117,10 @@ const UPGS = {
             unl() { return player.ranks.rank.gte(3) || player.mainUpg.atom.includes(1) },
             title: "Stronger",
             start: E(1e-30),
-            inc: E(9),
+            inc: E(90),
             effect(x) {
                 let xx = x.add(tmp.upgs.mass[3].bonus)
-                if (hasElement(81)) xx = xx.pow(10.1)
+                if (hasElement(81)) xx = xx.pow(1.1)
                 let ss = E(10)
                 if (player.ranks.rank.gte(34)) ss = ss.add(2)
                 if (player.mainUpg.bh.includes(9)) ss = ss.add(tmp.upgs.main?tmp.upgs.main[2][9].effect:E(0))
@@ -164,7 +164,7 @@ const UPGS = {
             bonus() {
                 let x = E(0)
                 if (player.mainUpg.rp.includes(7)) x = x.add(tmp.upgs.main?tmp.upgs.main[1][7].effect:0)
-                x = x.mul(getEnRewardEff(40))
+                x = x.mul(getEnRewardEff(4))
                 return x
             },
         },
