@@ -8,7 +8,7 @@ const UPGS = {
                 let data = this.getData(x)
                 d[x].cost = data.cost
                 d[x].bulk = data.bulk
-                
+
                 d[x].bonus = this[x].bonus?this[x].bonus():E(0)
                 d[x].eff = this[x].effect(player.massUpg[x]||E(0))
                 d[x].effDesc = this[x].effDesc(d[x].eff)
@@ -58,7 +58,7 @@ const UPGS = {
                 bulk = E(0)
                 if (player.mass.gte(start)) bulk = player.mass.div(start).max(1).log(inc).scaleEvery("massUpg",true).mul(fp).add(1).floor()
             }
-        
+
             return {cost: cost, bulk: bulk}
         },
         1: {
@@ -116,7 +116,7 @@ const UPGS = {
         3: {
             unl() { return player.ranks.rank.gte(3) || player.mainUpg.atom.includes(1) },
             title: "Stronger",
-            start: E(1000),
+            start: E(10),
             inc: E(9),
             effect(x) {
                 let xx = x.add(tmp.upgs.mass[3].bonus)
@@ -152,7 +152,7 @@ const UPGS = {
                 let ret = step.mul(xx.mul(hasElement(80)?25:1)).add(1).softcap(ss,sp,0).softcap(1.8e5,sp3,0)
                 ret = ret.mul(tmp.prim.eff[0])
                 if (!player.ranks.pent.gte(15)) ret = ret.softcap(ss2,sp2,0)
-                
+
                 return {step: step, eff: ret, ss: ss}
             },
             effDesc(eff) {
