@@ -18,7 +18,7 @@ const CONFIRMS = ['rp', 'bh', 'atom', 'sn', 'qu', 'br', 'dark']
 
 const FORMS = {
     getPreQUGlobalSpeed() {
-        let x = E(1e+100)
+        let x = E(1)
         if (tmp.qu.mil_reached[1]) x = x.mul(10)
         if (quUnl()) x = x.mul(tmp.qu.bpEff)
         if (hasElement(103)) x = x.mul(tmp.elements.effect[103])
@@ -555,6 +555,16 @@ function formatMass(ex) {
     if (ex.gte(1.619e20)) return format(ex.div(1.619e20)) + ' MME'
     if (ex.gte(1e6)) return format(ex.div(1e6)) + ' tonne'
     if (ex.gte(1e3)) return format(ex.div(1e3)) + ' kg'
+    if (ex.gte(1e1)) return format(ex.div(1e1)) + ' g'
+    if (ex.gte(1e-3)) return format(ex.div(1e-3)) + ' mig'
+    if (ex.gte(1e-6)) return format(ex.div(1e-6)) + ' mcg'
+    if (ex.gte(1e-9)) return format(ex.div(1e-9)) + ' ng'
+    if (ex.gte(1e-12)) return format(ex.div(1e-12)) + ' pg'
+    if (ex.gte(1e-15)) return format(ex.div(1e-15)) + ' fg'
+    if (ex.gte(1e-18)) return format(ex.div(1e-18)) + ' ag'
+    if (ex.gte(1e-21)) return format(ex.div(1e-21)) + ' zg'
+    if (ex.gte(1e-24)) return format(ex.div(1e-24)) + ' yg'
+    if (ex.gte(1e-35)) return format(ex.div(1e-35)) + ' pkg'
     return format(ex) + ' g'
 }
 
