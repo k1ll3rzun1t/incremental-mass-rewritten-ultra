@@ -119,8 +119,8 @@ const UPGS = {
             start: E(1e-30),
             inc: E(9),
             effect(x) {
-                let xx = x.add(tmp.upgs.mass[30].bonus)
-                if (hasElement(81)) xx = xx.pow(1.1)
+                let xx = x.add(tmp.upgs.mass[3].bonus)
+                if (hasElement(81)) xx = xx.pow(10.1)
                 let ss = E(10)
                 if (player.ranks.rank.gte(34)) ss = ss.add(2)
                 if (player.mainUpg.bh.includes(9)) ss = ss.add(tmp.upgs.main?tmp.upgs.main[2][9].effect:E(0))
