@@ -116,7 +116,7 @@ const UPGS = {
         3: {
             unl() { return player.ranks.rank.gte(3) || player.mainUpg.atom.includes(1) },
             title: "Stronger",
-            start: E(1),
+            start: E(1e-3),
             inc: E(9),
             effect(x) {
                 let xx = x.add(tmp.upgs.mass[3].bonus)
