@@ -64,7 +64,7 @@ const UPGS = {
         1: {
             unl() { return player.ranks.rank.gte(1) || player.mainUpg.atom.includes(1) },
             title: "Muscler",
-            start: E(10),
+            start: E(1),
             inc: E(1.5),
             effect(x) {
                 let step = E(1)
@@ -90,7 +90,7 @@ const UPGS = {
         2: {
             unl() { return player.ranks.rank.gte(2) || player.mainUpg.atom.includes(1) },
             title: "Booster",
-            start: E(100),
+            start: E(1),
             inc: E(4),
             effect(x) {
                 let step = E(2)
@@ -116,7 +116,7 @@ const UPGS = {
         3: {
             unl() { return player.ranks.rank.gte(3) || player.mainUpg.atom.includes(1) },
             title: "Stronger",
-            start: E(1000),
+            start: E(1),
             inc: E(9),
             effect(x) {
                 let xx = x.add(tmp.upgs.mass[3].bonus)
